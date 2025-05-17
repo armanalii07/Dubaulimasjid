@@ -431,33 +431,47 @@
             padding: 80px 0;
             background-color: var(--secondary-color);
         }
-        
+
         .events-timeline {
             position: relative;
             max-width: 800px;
             margin: 0 auto;
             padding: 40px 0;
         }
-        
-        .events-timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background-color: var(--primary-color);
-        }
-        
+
         .event-item {
             position: relative;
-            width: 50%;
-            padding: 20px 40px;
+            width: 100%;
+            max-width: 595px; /* A4 width */
+            margin: 0 auto;
+            padding: 20px;
             animation: fadeInUp 0.8s ease forwards;
             opacity: 0;
         }
-        
+
+        .event-item img {
+            width: 100%;
+            max-width: 595px; /* A4 width */
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .event-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+            text-align: center;
+        }
+
+        .event-date {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
         @keyframes fadeInUp {
             from {
                 transform: translateY(30px);
@@ -468,52 +482,7 @@
                 opacity: 1;
             }
         }
-        
-        .event-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .event-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .event-item::after {
-            content: '';
-            position: absolute;
-            top: 30px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
-        }
-        
-        .event-item:nth-child(odd)::after {
-            right: -10px;
-        }
-        
-        .event-item:nth-child(even)::after {
-            left: -10px;
-        }
-        
-        .event-content {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            position: relative;
-        }
-        
-        .event-date {
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .event-item:nth-child(1) { animation-delay: 0.1s; }
-        .event-item:nth-child(2) { animation-delay: 0.3s; }
-        .event-item:nth-child(3) { animation-delay: 0.5s; }
-        .event-item:nth-child(4) { animation-delay: 0.7s; }
+
 
         /* Committee Section */
         .committee-section {
@@ -885,6 +854,31 @@
         }
     </style>
 </head>
+<style>
+.slider {
+    width: 80%;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+    max-width: 600px;
+    height: 400px;
+    border: 2px solid #000; /* Border for visibility (optional) */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: auto; /* 3 sliding for each one */
+}
+
+.slides img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+</style>
+
 <body>
     <!-- Header -->
     <header id="header">
@@ -919,7 +913,7 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Welcome to Madeena Masjid</h1>
+                <h1>Welcome to Madeena Masjid Dubauli</h1>
                 <p>A center for worship, education, and community development in Dubauli village</p>
                 <div class="hero-btns">
                     <a href="#prayer-times" class="btn btn-primary">Prayer Times</a>
@@ -961,10 +955,14 @@
                     <a href="#services" class="btn btn-primary" style="margin-top: 20px;">Our Services</a>
                 </div>
                 
-                <div class="about-image">
-                    <img src="mosque-image.jpg" alt="Madeena Masjid Dubauli">
-                </div>
-            </div>
+                <div class="slider">
+    <div class="slides">
+        <img src="masjid1.jpg" alt="Madeena Masjid Dubauli">
+        <img src="masjid1.jpg" alt="Madeena Masjid Dubauli">
+        <img src="masjid3.jpg" alt="Madeena Masjid Dubauli">
+        <img src="masjidone.jpg" alt="Madeena Masjid Dubauli">
+    </div>
+</div>
         </div>
     </section>
 
@@ -1039,38 +1037,54 @@
             <div class="events-timeline">
                 <div class="event-item">
                     <div class="event-content">
-                        <div class="event-date">June 15, 2023 | After Maghrib</div>
-                        <h3>Weekly Tafseer Class</h3>
-                        <p>Join Imam Muhammad Saeed for the weekly tafseer of Surah Al-Baqarah. This session will cover verses 153-157 about patience and prayer.</p>
+                        <div class="event-date">June 7, 2025 | 1 days</div>
+                        <h3>Eid-ul-adza</h3>
+                        <p>Eid ul-Adha, also known as Bakrid in India, is a very important festival for Muslims.
+                            In 2025, Eid ul-Adha will be celebrated on 6th July, depending on the moon sighting. 
+                            The festival honors the great sacrifice of Prophet Ibrahim, who was ready to give up 
+                            his son as an act of faith..</p>
                     </div>
                 </div>
                 
                 <div class="event-item">
                     <div class="event-content">
-                        <div class="event-date">June 18, 2023 | 9:00 AM - 12:00 PM</div>
-                        <h3>Islamic Parenting Workshop</h3>
-                        <p>A special workshop for parents on raising children with Islamic values in the modern world. Featuring guest speaker Sheikh Abdullah Khan.</p>
+                        <div class="event-date">June 8, 2025 | 2nd days</div>
+                        <h3>Eid-ul-adza</h3>
+                        <p>Eid ul-Adha, also known as Bakrid in India, is a very important festival for Muslims.
+                            In 2025, Eid ul-Adha will be celebrated on 6th July, depending on the moon sighting. 
+                            The festival honors the great sacrifice of Prophet Ibrahim, who was ready to give up 
+                            his son as an act of faith..</p>
                     </div>
                 </div>
                 
                 <div class="event-item">
                     <div class="event-content">
-                        <div class="event-date">June 23, 2023 | After Isha</div>
-                        <h3>Qiyam-ul-Layl Program</h3>
-                        <p>Special night prayer program with recitation from the Quran, dhikr, and dua. Light refreshments will be served after the program.</p>
+                        <div class="event-date">June 9, 2025 | 3rd days</div>
+                        <h3>Eid-ul-adza</h3>
+                        <p>Eid ul-Adha, also known as Bakrid in India, is a very important festival for Muslims.
+                            In 2025, Eid ul-Adha will be celebrated on 6th July, depending on the moon sighting. 
+                            The festival honors the great sacrifice of Prophet Ibrahim, who was ready to give up 
+                            his son as an act of faith..</p>
                     </div>
                 </div>
                 
                 <div class="event-item">
                     <div class="event-content">
-                        <div class="event-date">July 1-30, 2023 | Daily</div>
+                        <div class="event-date">July 1-30, 2025 | Daily</div>
                         <h3>Summer Quran Intensive</h3>
                         <p>A month-long intensive program for children to memorize selected surahs and learn proper tajweed. Registration required.</p>
                     </div>
                 </div>
+                 <div class="event-item">
+                <div class="event-content">
+                    <img src="scanner.jpg" alt="notice for villagers">
+                    <p class="notice-date">Donations</p>
+                    <p>Pay your donations for development of our masjid and poor villagers.</p>
+                </div>
             </div>
         </div>
     </section>
+    
 
     <!-- Committee Section -->
     <section class="committee-section" id="committee">
@@ -1091,23 +1105,25 @@
                     </div>
                     <div class="member-info">
                         <h3>Ramjan Ali</h3>
-                        <p class="position">Chairman</p>
-                        <p class="tenure">Since 2015</p>
+                        <p class="position">Chairman (MANAGER)</p>
+                        <p class="tenure">Since 2021</p>
+                        <p class="contact">9628143486</p>
                     </div>
                 </div>
                 
                 <div class="committee-card">
                     <div class="member-image">
-                        <img src="image2.jpg" alt="Azaruddin Ansari">
+                        <img src="image2.jpg" alt="Azharuddin Ansari">
                         <div class="social-links">
                             <a href="#"><i class="fab fa-whatsapp"></i></a>
                             <a href="#"><i class="fas fa-phone-alt"></i></a>
                         </div>
                     </div>
                     <div class="member-info">
-                        <h3>Azaruddin Ansari</h3>
-                        <p class="position">Clerk</p>
-                        <p class="tenure">Since 2018</p>
+                        <h3>Azharuddin Ansari</h3>
+                        <p class="position">Clerk(SECRETORY)</p>
+                        <p class="tenure">Since 2022</p>
+                        <p class="contact">78601117132</p>
                     </div>
                 </div>
                 
@@ -1121,8 +1137,9 @@
                     </div>
                     <div class="member-info">
                         <h3>Haidar Miyan</h3>
-                        <p class="position">Cashier</p>
-                        <p class="tenure">Since 2016</p>
+                        <p class="position">Cashier (KHAJANCHI)</p>
+                        <p class="tenure">Since 2021</p>
+                        <p class="contact">9648163215</p>
                     </div>
                 </div>
                 
@@ -1136,8 +1153,9 @@
                     </div>
                     <div class="member-info">
                         <h3>Sobarati Miyan</h3>
-                        <p class="position">Helping Person</p>
-                        <p class="tenure">Since 2019</p>
+                        <p class="position">Helping Person (SADAR)</p>
+                        <p class="tenure">Since 2023</p>
+                        <p class="contact">7379841421</p>
                     </div>
                 </div>
             </div>
@@ -1181,6 +1199,8 @@
                         <div>
                             <h4>Email</h4>
                             <p>madeenamasjiddubauli@gmail.com</p>
+                            <p>for Your Donations And Help Them Who wants your Help You can
+                            pay Your Donation By using our this Contact upi 7379169973 (Arman Ali)</p>
                         </div>
                     </div>
                     
@@ -1190,7 +1210,7 @@
                         </div>
                         <div>
                             <h4>Office Hours</h4>
-                            <p>Monday-Sunday: 8:00 AM - 10:00 PM</p>
+                            <p>Monday-Sunday: 8:00 AM - 10:00 PM + All Time Emergency Help</p>
                         </div>
                     </div>
                 </div>
@@ -1232,7 +1252,7 @@
                     <div class="footer-logo">
                         <img src="masjidlogo.jpg" alt="Madeena Masjid Logo">
                         <div class="footer-logo-text">
-                            <h3>Madeena Masjid</h3>
+                            <h3>Madeena Masjid Dubauli</h3>
                             <p>Dubauli, Uttar Pradesh</p>
                         </div>
                     </div>
@@ -1282,7 +1302,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Madeena Masjid Dubauli. All Rights Reserved.</p>
+                <p>&copy; 2025 Madeena Masjid Dubauli. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -1361,10 +1381,12 @@
         const prayerTimes = [
             { name: 'Fajr', time: '4:15 AM', iqamah: '5:00 AM' },
             { name: 'Sunrise', time: '5:30 AM', iqamah: '' },
+            { name: 'Zummah', time: '12:30 PM', iqamah: '1:20 PM' },
             { name: 'Dhuhr', time: '1:30 PM', iqamah: '1:45 PM' },
             { name: 'Asr', time: '4:45 PM', iqamah: '5:00 PM' },
             { name: 'Maghrib', time: '7:05 PM', iqamah: '7:10 PM' },
-            { name: 'Isha', time: '8:30 PM', iqamah: '8:45 PM' }
+            { name: 'Isha', time: '8:15 PM', iqamah: '8:30 PM' }
+            
         ];
         
         // Function to determine which prayer is currently active
@@ -1378,7 +1400,8 @@
             const prayerTimesInMinutes = [
                 4 * 60 + 15,   // Fajr
                 5 * 60 + 30,    // Sunrise
-                13 * 60 + 30,    // Dhuhr
+                13 * 60 + 30,   // Dhuhr
+                13 * 60 + 20,   // Zummah 
                 16 * 60 + 45,    // Asr
                 19 * 60 + 5,     // Maghrib
                 20 * 60 + 30     // Isha
@@ -1452,6 +1475,20 @@
         
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
-    </script>
+    </script><script>
+let currentIndex = 0;
+
+function showSlides() {
+    const slides = document.querySelector(".slides");
+    currentIndex++;
+    if (currentIndex > 2) { // Total images - 1 (0, 1, 2)
+        currentIndex = 0;
+    }
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+setInterval(showSlides, 3000); // 3 seconds interval
+</script>
+
 </body>
 </html>
